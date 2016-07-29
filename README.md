@@ -12,7 +12,7 @@ Some of the variables were removed from the dataset
     
     •	Reason for loan provided by borrower: Similar to the last variable that was removed. Also, this variable is empty in the testing set for all the borrowers.
     
-    •	First 3 numbers of zip code and state of borrower: Could be a very important variable. However, since it is not allowed to use external data, it was removed from the set of variables . 
+    •	First 3 numbers of zip code and state of borrower: Could be a very important variable. However, since it is not allowed to use external data, it was removed from the set of variables. 
 
   2.	Converting the columns with dollar and percentage sign to floats
 As an important step in cleaning the data, the variables which could be mistakenly considered as strings were converted to numerical variables by removing their string part.
@@ -25,9 +25,13 @@ The categorical variables were converted to binary dummy variables. For the vari
 
   5.	Transforming some of the variables 
 Some of the variables were transformed to better help the model. These transformation include:
+
     •	Variable X5 were subtracted from variable X4: Variable X5 and X4 were highly correlated and in most of the examples, they have equal values. The new variable “X5-X4” is not correlated to “X4” anymore.
+    
     •	Variable X15 were categorized to 4 quarters and then converted to binary dummy variables: This variable represent the time of the year the loans were issued. Depending on the periods of the year, the interest rate could be different. For instance, normally the interest rates are higher when issued closer to the end of the year. 
+    
     •	Variable X23 were subtracted from the most recent credit line which was opened among all the borrowers: The new variable represents the relative duration of borrowers having credit lines or in other words, the relative age of each borrower’s credit line.
+    
     •	Variable X11 were converted to floats: Variable “X11” for borrowers with work experience less than 1 year who have also missing values for their "employer or job title" were replaced with 0 years of being employed. Variable “X11” for borrowers with work experience less than 1 year who have values for their "employer or job title" were replaced with 1. Finally, variable X11 for borrowers with work experience more than 10 years were replaced with 15 years of experience.
 
 After preparing the dataset, two models were developed to predict the interest rates. First model is Support Vector Regression (SVR) and the second model is Kernel Ridge Regression (KRR). For tuning the parameters of the model, random permutation cross validation was used in which in each iteration 0.01% of the dataset was used for training and 0.05% of the dataset was used for validation. The process repeats 10 times and find the parameters which denote the lowest MSE. The best parameters were selected among C = [0.1, 1, 10, 100] and gamma = [0.01, 0.1, 1, 10]. 
