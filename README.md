@@ -4,10 +4,14 @@ I did this project in Python for a private insurance company as work sample. The
 Before starting analyzing the data, I spent a good amount of time understanding all the variables by checking them on internet and looking their values and their statistics. Based on my opinion understanding the problem and in particular the definition of the variables will give a very good insight on how to model the data. I also spend most of my time cleaning the data. I think it is very true in data mining that “garbage in, garbage out”. Therefore, it is very important to clean and preprocess the data as much as possible. I have done the following steps to preprocess and model the dataset.
 
   1.	Deleting useless variables.
-Some of the variables were removed from the dataset 
+Some of the variables were removed from the dataset
+
     •	The IDs: IDs are unique for each example in the dataset, hence they do not provide any additional information to the model.
+
     •	Employer or job title: It may have effects on the model, however since competitors are not allowed to use any external data and also the answers are so different for each borrower as it is self-filled, it was removed from the set of variables.
+    
     •	Reason for loan provided by borrower: Similar to the last variable that was removed. Also, this variable is empty in the testing set for all the borrowers.
+    
     •	First 3 numbers of zip code and state of borrower: Could be a very important variable. However, since it is not allowed to use external data, it was removed from the set of variables . 
 
   2.	Converting the columns with dollar and percentage sign to floats
