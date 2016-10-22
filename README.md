@@ -1,4 +1,4 @@
-# Python-Data-Analysis-Sample-Project
+# Regression models for half a million borrowers with 32 variables to predict their interest rate in Python
 I did this project in Python for a private insurance company as work sample. The dataset contains the data for almost half million borrowers with 32 features. The purpose was to make a model to predict the interest rate. 
 
 Before starting analyzing the data, I spent a good amount of time understanding all the variables by checking them on internet and looking their values and their statistics. Based on my opinion understanding the problem and in particular the definition of the variables will give a very good insight on how to model the data. I also spend most of my time cleaning the data. I think it is very true in data mining that “garbage in, garbage out”. Therefore, it is very important to clean and preprocess the data as much as possible. I have done the following steps to preprocess and model the dataset.
